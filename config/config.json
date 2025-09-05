@@ -1,0 +1,24 @@
+{
+    "hosts": [
+        "localhost",
+        "192.168.1.22",
+        "192.168.29.163",
+        "192.168.0.150",
+        "192.168.1.14"
+    ],
+    "MongoDB": {
+        "Production": {
+            "UrlLink": "mongodb+srv://taxmanagerbittu_db_user:56JcDjSDb3V11iuq@quickscandata.tkh9maw.mongodb.net/quickscan ",
+            "atlas_user": "taxmanagerbittu_db_user",
+            "atlas_password": "56JcDjSDb3V11iuq"
+        },
+        "local": {
+            "localDatabaseUrl": "mongodb://0.0.0.0:27017/quickscan"
+        },
+        "Development": {
+            "UrlLink": "mongodb+srv://taxmanagerbittu_db_user:oRU6FFQXfRKjfRFd@quickscandevelopment.g6bzoyj.mongodb.net/quickscan",
+            "atlas_user": "taxmanagerbittu_db_user",
+            "atlas_password": "oRU6FFQXfRKjfRFd"
+        }
+    }
+}
