@@ -1,5 +1,4 @@
 @import url("/css/master.css");
-
 .qrsecarezon {
     background: #f6f6ff;
     padding: 50px;
@@ -9,6 +8,9 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 50vh;
 }
 
 .selqrcotyp ul li {
@@ -95,7 +97,7 @@
     position: absolute;
     right: 0;
     height: 2px;
-    width: 100%;
+    width: 35%;
     z-index: -1;
     opacity: 0.3;
     background: linear-gradient(90deg, rgb(0 137 235 / 0%) 0%, rgb(202 202 202) 100%);
@@ -104,3 +106,391 @@
 .proctsetup li:last-child:after {
     display: none;
 }
+
+.buttonsecare {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.butnsectonexpre {
+    background: #000;
+    padding: 8px 30px;
+    border-radius: 4px;
+    border: unset;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    font-weight: 300;
+}
+
+.selqrcotyp ul li:hover {
+    transition: 0.5s all;
+    transform: scale(1.1);
+}
+
+
+/* 🎨 nth-child background colors */
+
+.selqrcotyp ul li:nth-child(1) span {
+    background: #3b82f6;
+}
+
+
+/* URL */
+
+.selqrcotyp ul li:nth-child(2) span {
+    background: #2ecc71;
+}
+
+
+/* Play Store */
+
+.selqrcotyp ul li:nth-child(3) span {
+    background: #95a5a6;
+}
+
+
+/* Text */
+
+.selqrcotyp ul li:nth-child(4) span {
+    background: #e74c3c;
+}
+
+
+/* Map */
+
+.selqrcotyp ul li:nth-child(5) span {
+    background: #9b59b6;
+}
+
+
+/* Wi-Fi */
+
+.selqrcotyp ul li:nth-child(6) span {
+    background: #16a085;
+}
+
+
+/* Audio */
+
+.selqrcotyp ul li:nth-child(7) span {
+    background: #c0392b;
+}
+
+
+/* PDF */
+
+.selqrcotyp ul li:nth-child(8) span {
+    background: #25d366;
+}
+
+
+/* WhatsApp */
+
+.selqrcotyp ul li:nth-child(9) span {
+    background: #ff0000;
+}
+
+
+/* YouTube */
+
+.selqrcotyp ul li:nth-child(10) span {
+    background: #1877f2;
+}
+
+
+/* Facebook */
+
+.selqrcotyp ul li:nth-child(11) span {
+    background: #2eccfa;
+}
+
+
+/* Image */
+
+.selqrcotyp ul li:nth-child(12) span {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+
+/* Instagram */
+
+.selqrcotyp ul li:nth-child(13) span {
+    background: #34495e;
+}
+
+
+/* vCard */
+
+.selqrcotyp ul li:nth-child(14) span {
+    background: #0088cc;
+}
+
+
+/* Telegram */
+
+.selqrcotyp ul li:nth-child(15) span {
+    background: #ea4335;
+}
+
+
+/* Gmail */
+
+.selqrcotyp ul li:nth-child(16) span {
+    background: #f39c12;
+}
+
+
+/* Booking */
+
+.selqrcotyp ul li:nth-child(17) span {
+    background: #27ae60;
+}
+
+
+/* Phone */
+
+.selqrcotyp ul li:nth-child(18) span {
+    background: #e67e22;
+}
+
+
+/* PPTX */
+
+.selqrcotyp ul li:nth-child(19) span {
+    background: #2980b9;
+}
+
+
+/* Custom URL */
+
+.selqrcotyp ul li:nth-child(20) span {
+    background: #8e44ad;
+}
+
+
+/* List of Links */
+
+.selqrcotyp ul li:nth-child(21) span {
+    background: #000000;
+}
+
+
+/* TikTok */
+
+.selqrcotyp ul li:nth-child(22) span {
+    background: #d35400;
+}
+
+
+/* Video */
+
+.selqrcotyp ul li:nth-child(23) span {
+    background: #673ab7;
+}
+
+
+/* Google Forms */
+
+.selqrcotyp ul li:nth-child(24) span {
+    background: #c0392b;
+}
+
+
+/* PCR */
+
+.selqrcotyp ul li:nth-child(25) span {
+    background: #1da1f2;
+}
+
+
+/* Twitter */
+
+.selqrcotyp ul li:nth-child(26) span {
+    background: #fffc00;
+    color: #000;
+}
+
+
+/* Snapchat */
+
+.selqrcotyp ul li:nth-child(27) span {
+    background: #1db954;
+}
+
+
+/* Spotify */
+
+.selqrcotyp ul li:nth-child(28) span {
+    background: #34a853;
+}
+
+
+/* Google Doc */
+
+.selqrcotyp ul li:nth-child(29) span {
+    background: #fbbc05;
+    color: #000;
+}
+
+
+/* Google Review */
+
+.selqrcotyp ul li:nth-child(30) span {
+    background: #0f9d58;
+}
+
+
+/* Google Sheets */
+
+.selqrcotyp ul li:nth-child(31) span {
+    background: #6c5ce7;
+}
+
+
+/* Payment */
+
+.selqrcotyp ul li:nth-child(32) span {
+    background: #2d3436;
+}
+
+
+/* SMS */
+
+.selqrcotyp ul li:nth-child(33) span {
+    background: #34495e;
+}
+
+
+/* Logo */
+
+.selqrcotyp ul li:nth-child(34) span {
+    background: #00a4ef;
+}
+
+
+/* Office 365 */
+
+.selqrcotyp ul li:nth-child(35) span {
+    background: #9b59b6;
+}
+
+
+/* Shaped */
+
+.selqrcotyp ul li:nth-child(36) span {
+    background: #003087;
+}
+
+
+/* Paypal */
+
+.selqrcotyp ul li:nth-child(37) span {
+    background: #eb6d20;
+}
+
+
+/* Etsy */
+
+.selqrcotyp ul li:nth-child(38) span {
+    background: #3498db;
+}
+
+
+/* PNG */
+
+.selqrcotyp ul li:nth-child(39) span {
+    background: #0e76a8;
+}
+
+
+/* LinkedIn */
+
+.selqrcotyp ul li:nth-child(40) span {
+    background: #f7931a;
+}
+
+
+/* Crypto */
+
+.selqrcotyp ul li:nth-child(41) span {
+    background: #ff6f61;
+}
+
+
+/* Calendar */
+
+.selqrcotyp ul li:nth-child(42) span {
+    background: #6c5ce7;
+}
+
+
+/* Social Media */
+
+.selqrcotyp ul li:nth-child(43) span {
+    background: #e67e22;
+}
+
+
+/* Ticket */
+
+.selqrcotyp ul li:nth-child(44) span {
+    background: #ff4500;
+}
+
+
+/* Reddit */
+
+.selqrcotyp ul li:nth-child(45) span {
+    background: #7f8c8d;
+}
+
+
+/* File */
+
+.selqrcotyp ul li:nth-child(46) span {
+    background: #27ae60;
+}
+
+
+/* Excel */
+
+.selqrcotyp ul li:nth-child(47) span {
+    background: #4db6ac;
+}
+
+
+/* Venmo */
+
+.selqrcotyp ul li:nth-child(48) span {
+    background: #ff9900;
+}
+
+
+/* Amazon */
+
+.selqrcotyp ul li:nth-child(49) span {
+    background: #000000;
+}
+
+
+/* 2D Barcode */
+
+.selqrcotyp ul li:nth-child(50) span {
+    background: #27ae60;
+}
+
+
+/* UPI */
+
+.selqrcotyp ul li:nth-child(51) span {
+    background: #2980b9;
+}
+
+
+/* Online Booking */
