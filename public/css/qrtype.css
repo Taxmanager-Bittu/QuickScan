@@ -1,0 +1,419 @@
+
+
+/* 🎨 nth-child background colors */
+
+.selqrcotyp ul li:nth-child(1) span {
+    background: #dbeafe ;
+    color: #155dfc;
+}
+
+
+/* URL */
+
+.selqrcotyp ul li:nth-child(2) span {
+    background: #dcfce7;
+    color: #00a63e;
+}
+
+
+/* Play Store */
+
+.selqrcotyp ul li:nth-child(3) span {
+    background: #f6f3f4;
+    color: #4a5565;
+}
+
+
+/* Text */
+
+.selqrcotyp ul li:nth-child(4) span {
+    background: #ffe2e2;
+    color: #e7000b;
+}
+
+
+/* Map */
+
+.selqrcotyp ul li:nth-child(5) span {
+    background: #ffe2e2;
+    color: #1900ff;
+}
+
+/*wifi*/
+
+.selqrcotyp ul li:nth-child(6) span {
+    background: #ffedd4;
+    color: #f54a00 ;
+}
+
+
+/* Audio */
+
+.selqrcotyp ul li:nth-child(7) span {
+    background: #ffe2e2;
+    color: #e7000b ;
+}
+
+
+/* PDF */
+
+.selqrcotyp ul li:nth-child(8) span {
+    background: #dcfce7;
+    color: #00a63e ;
+}
+
+
+/* WhatsApp */
+
+
+
+.selqrcotyp ul li:nth-child(9) span {
+    background: #ffe2e2;
+    color: #e7000b ;
+}
+
+
+/* YouTube */
+
+.selqrcotyp ul li:nth-child(10) span {
+    background: #dbeafe;
+    color: #155dfc;
+}
+
+
+/* Facebook */
+
+
+
+.selqrcotyp ul li:nth-child(11) span {
+    background: #fce7f3;
+    color: #e60076;
+}
+
+
+/* Image */
+
+.selqrcotyp ul li:nth-child(12) span {
+    background: linear-gradient(45deg, #fb64b6, #fb64b6, #fb64b6, #fb64b6);
+    color: #fff;
+}
+
+
+/* Instagram */
+
+.selqrcotyp ul li:nth-child(13) span {
+    background: #e0e7ff;
+    color:#4f39f6 ;
+}
+
+
+/* vCard */
+
+.selqrcotyp ul li:nth-child(14) span {
+    background: #0088cc;
+    color: #dbeafe;
+}
+
+
+/* Telegram */
+
+.selqrcotyp ul li:nth-child(15) span {
+    background: #fef9c2;
+    color: #d08700;
+}
+
+
+/* Gmail */
+
+.selqrcotyp ul li:nth-child(16) span {
+    background: #cbfbf1;
+    color: #009689 ;
+}
+
+
+/* Booking */
+
+.selqrcotyp ul li:nth-child(17) span {
+    background: #dcfce7;
+    color: #00a63e;
+}
+
+
+/* Phone */
+
+.selqrcotyp ul li:nth-child(18) span {
+    background: #ffedd4;
+    color: #f54a00 ;
+}
+
+
+/* PPTX */
+
+.selqrcotyp ul li:nth-child(19) span {
+    background: #dbeafe;
+    color:#155dfc ;
+}
+
+
+/* Custom URL */
+
+.selqrcotyp ul li:nth-child(20) span {
+    background: #f6f3f4;
+    color: #4a5565;
+
+}
+
+
+/* List of Links */
+
+.selqrcotyp ul li:nth-child(21) span {
+    background: #000;
+    color: #fff;
+}
+
+
+/* TikTok */
+
+.selqrcotyp ul li:nth-child(22) span {
+    background: #f3e8ff;
+    color:#9810fa ;
+}
+
+
+/* Video */
+
+.selqrcotyp ul li:nth-child(23) span {
+    background: #f3e8ff;
+    color: #9810fa;
+
+}
+
+
+/* Google Forms */
+
+.selqrcotyp ul li:nth-child(24) span {
+    background: #ffe2e2;
+    color: #e7000b;
+
+}
+
+
+/* PCR */
+
+.selqrcotyp ul li:nth-child(25) span {
+    background: #000;
+    color: #fff;
+}
+
+
+/* Twitter */
+
+.selqrcotyp ul li:nth-child(26) span {
+    background: #fef9c2;
+    color: #d08700;
+}
+
+
+/* Snapchat */
+
+.selqrcotyp ul li:nth-child(27) span {
+    background: #dcfce7;
+    color: #00a63e;
+}
+
+
+/* Spotify */
+
+.selqrcotyp ul li:nth-child(28) span {
+    background: #dbeafe;
+    color: #155dfc;
+}
+
+
+/* Google Doc */
+
+.selqrcotyp ul li:nth-child(29) span {
+    background: #fef9c2;
+    color: #d08700;
+}
+
+
+/* Google Review */
+
+.selqrcotyp ul li:nth-child(30) span {
+    background: #dcfce7;
+    color:#00a63e ;
+}
+
+
+/* Google Sheets */
+
+.selqrcotyp ul li:nth-child(31) span {
+    background: #dbeafe;
+    color: #155dfc;
+}
+
+
+/* Payment */
+
+.selqrcotyp ul li:nth-child(32) span {
+    background: #dcfce7;
+    color: #00a63e;
+}
+
+
+/* SMS */
+
+.selqrcotyp ul li:nth-child(33) span {
+    background: #fce7f3;
+    color: #e60076;
+}
+
+
+/* Logo */
+
+.selqrcotyp ul li:nth-child(34) span {
+    background: #dbeafe;
+    color: #155dfc;
+
+}
+
+
+/* Office 365 */
+
+.selqrcotyp ul li:nth-child(35) span {
+    background: #f3e8ff;
+    color: #9810fa;
+}
+
+
+/* Shaped */
+
+.selqrcotyp ul li:nth-child(36) span {
+    background: #dbeafe;
+    color: #155dfc;
+}
+
+
+/* Paypal */
+
+.selqrcotyp ul li:nth-child(37) span {
+    background: #ffedd4;
+    color: #f54a00;
+}
+
+
+/* Etsy */
+
+.selqrcotyp ul li:nth-child(38) span {
+    background: #f6f3f4;
+    color: #4a5565;
+}
+
+
+/* PNG */
+
+.selqrcotyp ul li:nth-child(39) span {
+    background: #dbeafe;
+    color: #155dfc;
+}
+
+
+/* LinkedIn */
+
+.selqrcotyp ul li:nth-child(40) span {
+    background: #fffde5;
+    color: #d08700;
+}
+
+
+/* Crypto */
+
+.selqrcotyp ul li:nth-child(41) span {
+    background: #ffe2e2;
+    color: #e7000b;
+}
+
+
+/* Calendar */
+
+.selqrcotyp ul li:nth-child(42) span {
+    background: #f3e8ff;
+    color: #9810fa;
+}
+
+
+/* Social Media */
+
+.selqrcotyp ul li:nth-child(43) span {
+    background: #e0e7ff;
+    color: #4f39f6;
+}
+
+
+/* Ticket */
+
+.selqrcotyp ul li:nth-child(44) span {
+   background: #ffedd4;
+    color: #f54a00;
+}
+
+
+/* Reddit */
+
+.selqrcotyp ul li:nth-child(45) span {
+    background: #f6f3f4;
+    color: #4a5565;
+}
+
+
+/* File */
+
+.selqrcotyp ul li:nth-child(46) span {
+    background: #dcfce7;
+    color: #00a63e;
+}
+
+
+/* Excel */
+
+.selqrcotyp ul li:nth-child(47) span {
+    background: #dbeafe;
+    color: #155dfc;
+}
+
+
+/* Venmo */
+
+.selqrcotyp ul li:nth-child(48) span {
+ background: #ffedd4;
+    color: #f54a00;
+}
+
+
+/* Amazon */
+
+.selqrcotyp ul li:nth-child(49) span {
+       background: #000;
+    color: #fff;
+}
+
+
+/* 2D Barcode */
+
+.selqrcotyp ul li:nth-child(50) span {
+    background: #dcfce7;
+    color: #00a63e;
+}
+
+
+/* UPI */
+
+.selqrcotyp ul li:nth-child(51) span {
+    background: #cbfbf1;
+    color: #009689;
+
+}
+
+
+/* Online Booking */
