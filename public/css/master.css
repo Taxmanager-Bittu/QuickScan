@@ -23,13 +23,15 @@ a {
     border-radius: 20px;
     height: 100%;
     width: 100%;
+    display: inline-block;
 }
 
 .bordelinside {
     border: 1px solid #e5e5e5;
-    height: 100%;
+    width: 100%;
     padding: 30px;
     border-radius: 20px;
+    display: inline-block;
 }
 
 ul {
