@@ -26,3 +26,36 @@
 </head>
 
 <body>
+    <!-- Flase Messages -->
+    <div class="errormessages">
+        <span class="close"><i class="fa-solid fa-xmark"></i></span>
+        <% if(success && success.length> 0) { %>
+            <div class="succesmsg" role="alert">
+                <h6>
+                    <svg width="40" height="40" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="19.9915" cy="20.4913" r="17.3333" fill="#659E10"></circle>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M29.8854 12.407C30.5152 12.865 30.6544 13.7468 30.1964 14.3766L19.8568 28.5936C19.6142 28.9271 19.2379 29.1377 18.8268 29.1699C18.4156 29.2022 18.011 29.0529 17.7194 28.7613L9.96474 21.0066C9.4141 20.4559 9.4141 19.5632 9.96474 19.0125C10.5154 18.4619 11.4081 18.4619 11.9588 19.0125L18.5467 25.6004L27.9157 12.718C28.3738 12.0882 29.2556 11.949 29.8854 12.407Z"
+                            fill="white"></path>
+                    </svg>
+                    <%= success %>
+                </h6>
+            </div>
+            <% } %>
+                <% if(error && error.length> 0) { %>
+                    <div class="errormsg succesmsg" role="alert">
+                        <h6>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" xml:space="preserve" width="40" height="40">
+                                <path style="fill:#eb0606"
+                                    d="M40 20a20 20 0 0 1 -20 20A20 20 0 0 1 0 20a20 20 0 0 1 40 0" />
+                                <path style="fill:#ff0000" d="M20 0v40c11.046 0 20 -8.954 20 -20S31.046 0 20 0" />
+                                <path style="fill:#fff"
+                                    d="m28.586 14.444 -3.03 -3.03L20 16.97l-5.556 -5.556 -3.03 3.03L16.97 20l-5.556 5.556 3.03 3.03L20 23.03l5.556 5.556 3.03 -3.03L23.03 20z" />
+                                <path style="fill:#fff"
+                                    d="m28.586 14.444 -3.03 -3.03L20 16.97v6.061l5.556 5.556 3.03 -3.03L23.03 20z" />
+                            </svg>
+                            <%= error %>
+                        </h6>
+                    </div>
+                    <% } %>
+    </div>

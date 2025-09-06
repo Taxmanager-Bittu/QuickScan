@@ -133,3 +133,9 @@
     transition: 0.5s all;
     transform: scale(1.1);
 }
+
+.selqrcotyp ul li.active {
+    border-color: #0d6efd;
+    box-shadow: 5px 5px 10px 0 #d9d9d9;
+    transform: scale(1.0);
+}

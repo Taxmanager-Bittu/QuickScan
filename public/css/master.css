@@ -45,3 +45,152 @@ li {
     padding: 0;
     display: inline-block;
 }
+
+
+/*--  error --*/
+
+.errormessages {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(46, 54, 67);
+    border-radius: 8px;
+    box-shadow: rgba(35, 68, 101, 0.15) 0px 6px 24px, rgba(35, 68, 101, 0.15) 0px 6px 8px;
+    z-index: 999;
+    min-height: 50px;
+    margin-bottom: 1rem;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    font-family: sans-serif;
+    cursor: pointer;
+    direction: ltr;
+    width: max-content;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+}
+
+.errormessages.show {
+    display: block;
+    opacity: 1;
+    animation: flipIn 0.5s forwards;
+}
+
+.errormessages .hide {
+    display: none;
+    opacity: 0;
+    animation: flipOut 0.5s forwards;
+}
+
+.errormessages .succesmsg {
+    margin: 0;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+    align-content: flex-start;
+}
+
+.errormessages h6 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    margin: 0;
+    padding: 0px;
+    width: max-content;
+    gap: 15px;
+    font-family: Manrope, -apple-system, "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 150%;
+    color: rgb(35, 40, 54);
+    padding-right: 100px;
+    text-transform: capitalize;
+}
+
+.errormessages h6 svg {
+    width: 40px;
+    fill: none;
+    display: inline-block;
+}
+
+.errormessages span.close {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    font-size: 16px;
+    color: #596471;
+    position: absolute;
+    top: 0;
+    right: 0px;
+}
+
+.reverse-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(101, 158, 16);
+    position: relative;
+    transition: width 10s linear;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.errormessages .errormsg+.reverse-progress-bar {
+    background-color: #ff0000;
+}
+
+.errormessages .errormsg.succesmsg h6 {
+    color: #ff0000;
+}
+
+
+/* Flip in from bottom to middle */
+
+@keyframes flipIn {
+    0% {
+        transform: rotateX(-90deg) skewX(20deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateX(0deg) skewX(0deg);
+        opacity: 1;
+    }
+}
+
+
+/* Flip out from middle to bottom */
+
+@keyframes flipOut {
+    0% {
+        transform: rotateX(0deg) skewX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(-90deg) skewX(20deg);
+        opacity: 0;
+    }
+}
+
+.form-navigation {
+    position: relative;
+    margin: 30px 0px 0px;
+    width: 100%;
+}
+
+.form-navigation .back-btn {
+    background: unset;
+    border-color: #3D70F5;
+    color: #3D70F5;
+}
