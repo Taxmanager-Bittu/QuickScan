@@ -15,70 +15,96 @@
                                 <li><span>3. </span>Customize Design Your QR</li>
                             </ul>
                         </div>
-                        <!-- Select QR Code Type -->
+                        <!-- 1. Select QR Code Type -->
                         <div class="selqrcotyp bordelinside">
                             <h4>Select QR Code Type</h4>
-                            <ul>
-                                <li><span><i class="fa-solid fa-link"></i></span> <b>URL / Link</b></li>
-                                <li><span><i class="fa-brands fa-google-play"></i></span> <b>Play Market / App Store</b></li>
-                                <li><span><i class="fa-solid fa-font"></i></span> <b>Text</b></li>
-                                <li><span><i class="fa-solid fa-map-location-dot"></i></span> <b>Map</b></li>
-                                <li><span><i class="fa-solid fa-wifi"></i></span> <b>Wi-Fi</b></li>
-                                <li><span><i class="fa-solid fa-headphones"></i></span> <b>Audio</b></li>
-                                <li><span><i class="fa-solid fa-file-pdf"></i></span> <b>PDF</b></li>
-                                <li><span><i class="fa-brands fa-whatsapp"></i></span> <b>WhatsApp</b></li>
-                                <li><span><i class="fa-brands fa-youtube"></i></span> <b>YouTube</b></li>
-                                <li><span><i class="fa-brands fa-facebook"></i></span> <b>Facebook</b></li>
-                                <li><span><i class="fa-solid fa-image"></i></span> <b>Image</b></li>
-                                <li><span><i class="fa-brands fa-instagram"></i></span> <b>Instagram</b></li>
-                                <li><span><i class="fa-solid fa-id-card"></i></span> <b>vCard</b></li>
-                                <li><span><i class="fa-brands fa-telegram"></i></span> <b>Telegram</b></li>
-                                <li><span><i class="fa-solid fa-envelope"></i></span> <b>E-mail</b></li>
-                                <li><span><i class="fa-solid fa-calendar-check"></i></span> <b>Booking</b></li>
-                                <li><span><i class="fa-solid fa-phone"></i></span> <b>Phone Call</b></li>
-                                <li><span><i class="fa-solid fa-file-powerpoint"></i></span> <b>PPTX</b></li>
-                                <li><span><i class="fa-solid fa-earth-americas"></i></span> <b>Custom URL</b></li>
-                                <li><span><i class="fa-solid fa-list"></i></span> <b>List of Links</b></li>
-                                <li><span><i class="fa-brands fa-tiktok"></i></span> <b>TikTok</b></li>
-                                <li><span><i class="fa-solid fa-video"></i></span> <b>Video</b></li>
-                                <li><span><i class="fa-solid fa-file-lines"></i></span> <b>Google Forms</b></li>
-                                <li><span><i class="fa-solid fa-vial"></i></span> <b>PCR</b></li>
-                                <li><span><i class="fa-brands fa-x-twitter"></i></span> <b>X (Twitter)</b></li>
-                                <li><span><i class="fa-brands fa-snapchat"></i></span> <b>Snapchat</b></li>
-                                <li><span><i class="fa-brands fa-spotify"></i></span> <b>Spotify</b></li>
-                                <li><span><i class="fa-brands fa-google-drive"></i></span> <b>Google Doc</b></li>
-                                <li><span><i class="fa-solid fa-star"></i></span> <b>Google Review</b></li>
-                                <li><span><i class="fa-solid fa-table"></i></span> <b>Google Sheets</b></li>
-                                <li><span><i class="fa-solid fa-credit-card"></i></span> <b>Payment</b></li>
-                                <li><span><i class="fa-solid fa-comment-sms"></i></span> <b>SMS</b></li>
-                                <li><span><i class="fa-solid fa-copyright"></i></span> <b>Logo</b></li>
-                                <li><span><i class="fa-brands fa-microsoft"></i></span> <b>Office 365</b></li>
-                                <li><span><i class="fa-solid fa-shapes"></i></span> <b>Shaped</b></li>
-                                <li><span><i class="fa-brands fa-paypal"></i></span> <b>Paypal</b></li>
-                                <li><span><i class="fa-brands fa-etsy"></i></span> <b>Etsy</b></li>
-                                <li><span><i class="fa-solid fa-file-image"></i></span> <b>PNG</b></li>
-                                <li><span><i class="fa-brands fa-linkedin"></i></span> <b>LinkedIn</b></li>
-                                <li><span><i class="fa-brands fa-bitcoin"></i></span> <b>Crypto Payment</b></li>
-                                <li><span><i class="fa-solid fa-calendar-days"></i></span> <b>Calendar</b></li>
-                                <li><span><i class="fa-solid fa-share-nodes"></i></span> <b>Social Media</b></li>
-                                <li><span><i class="fa-solid fa-ticket"></i></span> <b>Ticket</b></li>
-                                <li><span><i class="fa-brands fa-reddit"></i></span> <b>Reddit</b></li>
-                                <li><span><i class="fa-solid fa-file"></i></span> <b>File</b></li>
-                                <li><span><i class="fa-solid fa-file-excel"></i></span> <b>Excel</b></li>
-                                <li><span><i class="fa-brands fa-vimeo"></i></span> <b>Venmo</b></li>
-                                <li><span><i class="fa-brands fa-amazon"></i></span> <b>Amazon</b></li>
-                                <li><span><i class="fa-solid fa-qrcode"></i></span> <b>2D-Barcode</b></li>
-                                <li><span><i class="fa-solid fa-indian-rupee-sign"></i></span> <b>UPI</b></li>
-                                <li><span><i class="fa-solid fa-calendar-check"></i></span> <b>Online Booking</b></li>
+                            <form action="/save-qr-type" method="post">
+                                <input type="hidden" name="qr_type" id="selectedQrType">
+                                <input type="hidden" name="route_name" id="selectedRouteName">
+                                <ul id="qrTypeList">
+                                    <li data-type="URL / Link" data-route="url"><span><i class="fa-solid fa-link"></i></span> <b>URL / Link</b></li>
+                                    <li data-type="Play Market / App Store" data-route="playstore"><span><i class="fa-brands fa-google-play"></i></span> <b>Play Market / App Store</b></li>
+                                    <li data-type="Text" data-route="text"><span><i class="fa-solid fa-font"></i></span> <b>Text</b></li>
+                                    <li data-type="Map" data-route="map"><span><i class="fa-solid fa-map-location-dot"></i></span> <b>Map</b></li>
+                                    <li data-type="Wi-Fi" data-route="wifi"><span><i class="fa-solid fa-wifi"></i></span> <b>Wi-Fi</b></li>
+                                    <li data-type="Audio" data-route="audio"><span><i class="fa-solid fa-headphones"></i></span> <b>Audio</b></li>
+                                    <li data-type="PDF" data-route="pdf"><span><i class="fa-solid fa-file-pdf"></i></span> <b>PDF</b></li>
+                                    <li data-type="WhatsApp" data-route="whatsapp"><span><i class="fa-brands fa-whatsapp"></i></span> <b>WhatsApp</b></li>
+                                    <li data-type="YouTube" data-route="youtube"><span><i class="fa-brands fa-youtube"></i></span> <b>YouTube</b></li>
+                                    <li data-type="Facebook" data-route="facebook"><span><i class="fa-brands fa-facebook"></i></span> <b>Facebook</b></li>
+                                    <li data-type="Image" data-route="image"><span><i class="fa-solid fa-image"></i></span> <b>Image</b></li>
+                                    <li data-type="Instagram" data-route="instagram"><span><i class="fa-brands fa-instagram"></i></span> <b>Instagram</b></li>
+                                    <li data-type="vCard" data-route="vcard"><span><i class="fa-solid fa-id-card"></i></span> <b>vCard</b></li>
+                                    <li data-type="Telegram" data-route="telegram"><span><i class="fa-brands fa-telegram"></i></span> <b>Telegram</b></li>
+                                    <li data-type="E-mail" data-route="email"><span><i class="fa-solid fa-envelope"></i></span> <b>E-mail</b></li>
+                                    <li data-type="Booking" data-route="booking"><span><i class="fa-solid fa-calendar-check"></i></span> <b>Booking</b></li>
+                                    <li data-type="Phone Call" data-route="phonecall"><span><i class="fa-solid fa-phone"></i></span> <b>Phone Call</b></li>
+                                    <li data-type="PPTX" data-route="pptx"><span><i class="fa-solid fa-file-powerpoint"></i></span> <b>PPTX</b></li>
+                                    <li data-type="Custom URL" data-route="customurl"><span><i class="fa-solid fa-earth-americas"></i></span> <b>Custom URL</b></li>
+                                    <li data-type="List of Links" data-route="listlinks"><span><i class="fa-solid fa-list"></i></span> <b>List of Links</b></li>
+                                    <li data-type="TikTok" data-route="tiktok"><span><i class="fa-brands fa-tiktok"></i></span> <b>TikTok</b></li>
+                                    <li data-type="Video" data-route="video"><span><i class="fa-solid fa-video"></i></span> <b>Video</b></li>
+                                    <li data-type="Google Forms" data-route="googleforms"><span><i class="fa-solid fa-file-lines"></i></span> <b>Google Forms</b></li>
+                                    <li data-type="PCR" data-route="pcr"><span><i class="fa-solid fa-vial"></i></span> <b>PCR</b></li>
+                                    <li data-type="X (Twitter)" data-route="twitter"><span><i class="fa-brands fa-x-twitter"></i></span> <b>X (Twitter)</b></li>
+                                    <li data-type="Snapchat" data-route="snapchat"><span><i class="fa-brands fa-snapchat"></i></span> <b>Snapchat</b></li>
+                                    <li data-type="Spotify" data-route="spotify"><span><i class="fa-brands fa-spotify"></i></span> <b>Spotify</b></li>
+                                    <li data-type="Google Doc" data-route="googledoc"><span><i class="fa-brands fa-google-drive"></i></span> <b>Google Doc</b></li>
+                                    <li data-type="Google Review" data-route="googlereview"><span><i class="fa-solid fa-star"></i></span> <b>Google Review</b></li>
+                                    <li data-type="Google Sheets" data-route="googlesheets"><span><i class="fa-solid fa-table"></i></span> <b>Google Sheets</b></li>
+                                    <li data-type="Payment" data-route="payment"><span><i class="fa-solid fa-credit-card"></i></span> <b>Payment</b></li>
+                                    <li data-type="SMS" data-route="sms"><span><i class="fa-solid fa-comment-sms"></i></span> <b>SMS</b></li>
+                                    <li data-type="Logo" data-route="logo"><span><i class="fa-solid fa-copyright"></i></span> <b>Logo</b></li>
+                                    <li data-type="Office 365" data-route="office365"><span><i class="fa-brands fa-microsoft"></i></span> <b>Office 365</b></li>
+                                    <li data-type="Shaped" data-route="shaped"><span><i class="fa-solid fa-shapes"></i></span> <b>Shaped</b></li>
+                                    <li data-type="Paypal" data-route="paypal"><span><i class="fa-brands fa-paypal"></i></span> <b>Paypal</b></li>
+                                    <li data-type="Etsy" data-route="etsy"><span><i class="fa-brands fa-etsy"></i></span> <b>Etsy</b></li>
+                                    <li data-type="PNG" data-route="png"><span><i class="fa-solid fa-file-image"></i></span> <b>PNG</b></li>
+                                    <li data-type="LinkedIn" data-route="linkedin"><span><i class="fa-brands fa-linkedin"></i></span> <b>LinkedIn</b></li>
+                                    <li data-type="Crypto Payment" data-route="cryptopayment"><span><i class="fa-brands fa-bitcoin"></i></span> <b>Crypto Payment</b></li>
+                                    <li data-type="Calendar" data-route="calendar"><span><i class="fa-solid fa-calendar-days"></i></span> <b>Calendar</b></li>
+                                    <li data-type="Social Media" data-route="socialmedia"><span><i class="fa-solid fa-share-nodes"></i></span> <b>Social Media</b></li>
+                                    <li data-type="Ticket" data-route="ticket"><span><i class="fa-solid fa-ticket"></i></span> <b>Ticket</b></li>
+                                    <li data-type="Reddit" data-route="reddit"><span><i class="fa-brands fa-reddit"></i></span> <b>Reddit</b></li>
+                                    <li data-type="File" data-route="file"><span><i class="fa-solid fa-file"></i></span> <b>File</b></li>
+                                    <li data-type="Excel" data-route="excel"><span><i class="fa-solid fa-file-excel"></i></span> <b>Excel</b></li>
+                                    <li data-type="Venmo" data-route="venmo"><span><i class="fa-brands fa-vimeo"></i></span> <b>Venmo</b></li>
+                                    <li data-type="Amazon" data-route="amazon"><span><i class="fa-brands fa-amazon"></i></span> <b>Amazon</b></li>
+                                    <li data-type="2D-Barcode" data-route="2dbarcode"><span><i class="fa-solid fa-qrcode"></i></span> <b>2D-Barcode</b></li>
+                                    <li data-type="UPI" data-route="upi"><span><i class="fa-solid fa-indian-rupee-sign"></i></span> <b>UPI</b></li>
+                                    <li data-type="Online Booking" data-route="onlinebooking"><span><i class="fa-solid fa-calendar-check"></i></span> <b>Online Booking</b></li>
+                                </ul>
+                                <div class="buttonsecare">
+                                    <button class="next butnsectonexpre" type="submit" id="nextBtn" disabled>Next</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- 2. Complete Content -->
+                        <div class="complitcontsec bordelinside" style="display: none;">
+                            <h4>Complete Content</h4>
+                            <form action="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" name="email_id" class="form-control" value="info@indianjournals.com" placeholder="Enter email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" name="email_id" class="form-control" value="info@indianjournals.com" placeholder="Enter email">
+                                        </div>
+                                    </div>
+                                </div>
 
-                            </ul>
-
+                            </form>
                             <div class="buttonsecare">
                                 <span class="Previous butnsectonexpre">Previous</span>
                                 <button class="next butnsectonexpre" type="submit">Next</button>
                             </div>
-
                         </div>
+
                     </div>
                     <div class="col-md-4">
                         <div class="qrcodeprocesec">
