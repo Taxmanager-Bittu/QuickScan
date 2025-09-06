@@ -6,3 +6,4 @@
 6/9/2025, 1:08:29 pm [ERROR] File: D:\Profile Data\DESKTOP\QuickScan\utils\logger.js Line: 111 IP: ::1 - logger is not defined
 6/9/2025, 1:12:40 pm [ERROR] File: D:\Profile Data\DESKTOP\QuickScan\utils\logger.js Line: 111 IP: ::1 - Cannot read properties of undefined (reading 'Status')
 6/9/2025, 1:13:50 pm [ERROR] File: D:\Profile Data\DESKTOP\QuickScan\utils\logger.js Line: 111 IP: ::1 - Cannot read properties of undefined (reading 'Status')
+6/9/2025, 2:31:27 pm [ERROR] File: D:\Profile Data\DESKTOP\QuickScan\utils\logger.js Line: 111 IP: ::1 - Cannot read properties of undefined (reading 'Status')
