@@ -1,5 +1,6 @@
 @import url("/css/master.css");
 @import url("/css/qrtype.css");
+
 .qrsecarezon {
     background: #f6f6ff;
     padding: 50px;
@@ -138,4 +139,157 @@
     border-color: #0d6efd;
     box-shadow: 5px 5px 10px 0 #d9d9d9;
     transform: scale(1.0);
+}
+
+
+/*---New Css---*/
+.formdivider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+}
+
+.formdivider .form-group {
+    width: 310px;
+}
+
+.bordelinside h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0px 0px 10px;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+form h5 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px 0px 15px;
+}
+
+.form-group {
+    margin: 0px auto 20px;
+    padding: 0px;
+    width: 100%;
+    display: inline-block;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px 0px 5px;
+}
+
+.form-control {
+    padding: 8px 10px;
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    background: #f3f3f5;
+}
+
+/* .form-control::placeholder {
+    color: #000000;
+} */
+.qrcodeprocesec {
+    margin: 0px;
+    padding: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.qrcodeproce {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.qrcodeproce h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px 0px 20px;
+}
+
+.qrcodshow {
+    margin: 0px 0px 30px;
+    padding: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    width: 100%;
+    display: inline-block;
+}
+
+.qrcodedownbtn {
+    width: 100%;
+    margin: 0px 0px 15px;
+    padding: 0px;
+}
+
+.qrcodedownbtn .btn {
+    width: 100%;
+    background: #818089;
+    border: unset;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.qrcodecopysharbtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0px 0px 15px;
+    padding: 0px;
+}
+
+.qrcodecopysharbtn a {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: max-content;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    margin: 0px;
+    padding: 6px 35px;
+}
+
+.qrcodelist {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.qrcodelist ul {
+    display: block;
+    width: 100%;
+}
+
+.qrcodelist ul li {
+    width: 100%;
+    line-height: 25px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
 }
