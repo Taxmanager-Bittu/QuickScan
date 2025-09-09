@@ -14,6 +14,7 @@ const flash = require('connect-flash');
 const favicon = require('./config/favicon');
 var dbConnection = require("./config/connection.js");
 const errorHandler = require("./middlewares/errorHandler.js");
+const trackerMiddleware = require("./middlewares/UserTracker.js");
 
 
 // Initialize App
@@ -71,6 +72,7 @@ app.use((err, req, res, next) => errorHandler.handleError(err, req, res, next));
 
 // Start Server
 dbConnection.connect().then(() => {
+    app.use(trackerMiddleware.analyzer);
     http.createServer(app).listen(port, () => {
         console.log(`✅ Server running on port ${port}`);
         console.log(`🌐 http://localhost:${port}`);

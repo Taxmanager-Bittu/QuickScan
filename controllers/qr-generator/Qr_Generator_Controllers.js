@@ -46,7 +46,14 @@ class QrCodeGeneratorApiData {
     async saveQrTypeData(req, res) {
         try {
             const data = req.body;
-            console.log("🚀 ~ file: Qr_Generator_Controllers.js:48 ~ QrCodeGeneratorApiData ~ saveQrTypeData ~ data:", data)
+
+
+            // 2. Extract previous URL path
+            const requestData = req.requestData.previousUrl;
+            const urls = new URL(requestData);
+            const path = urls.pathname;
+
+
 
 
         } catch (error) {
