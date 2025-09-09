@@ -21,7 +21,6 @@ router.get(["/"], async(req, res) => {
     try {
         // session Data
         const qrTypeData = req.session.qrTypeData || null;
-        console.log("🚀 ~ file: MainRoutes.js:34 ~ router.get ~ qrTypeData:", qrTypeData)
 
         // Pages Direcdtory
         return res.status(200).render("../views/main/index.ejs", {
@@ -32,7 +31,6 @@ router.get(["/"], async(req, res) => {
         next(error);
     }
 });
-
 
 // Save QR Code Type
 router.post("/save-qr-type", async(req, res, next) => {
@@ -54,6 +52,28 @@ router.post("/save-qr-type", async(req, res, next) => {
     }
 });
 
+// Go back to QR Type Selection
+router.get("/previous-qr-type", (req, res, next) => {
+    try {
+        // Session clear karo taki wapas selection dikhe
+        req.session.qrTypeData = null;
+        return res.redirect("/");
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Save Complete Content
+router.post("/save-complete-content", async(req, res, next) => {
+    try {
+        // Call the Qr Type Function
+        const response = await qrgenrat.saveQrcontent(req, res);
+
+
+    } catch (error) {
+        next(error);
+    }
+})
 
 
 

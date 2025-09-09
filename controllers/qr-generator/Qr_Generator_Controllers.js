@@ -65,11 +65,37 @@ class QrCodeGeneratorApiData {
             return ({ Status: "suc", Msg: "QR type data saved successfully", data: resdata });
 
         } catch (error) {
-            console.error("Error in saveQrTypeData:", error);
+            console.error("Error in save Qr Type Data:", error);
             return ({ Status: "err", Msg: "Something went wrong", error: error });
         }
     }
 
+    // Save Complete Content
+    async saveQrcontent(req, res) {
+        try {
+            // inout Data 
+            const data = req.body;
+            // 2. Extract previous URL path
+            const requestData = req.get("referer") || req.originalUrl;
+            const urls = new URL(requestData, `${req.protocol}://${req.get("host")}`);
+            const path = urls.pathname;
+
+            // Final response data
+            const resdata = {
+                qr_type: data.qr_type || null,
+                route_name: data.route_name || null,
+                path: path || null,
+                userId: "USR_" + Date.now()
+            };
+
+            // Retun Data
+            return ({ Status: "suc", Msg: "QR type data saved successfully", data: resdata });
+
+        } catch (error) {
+            console.error("Error in save Qr Type Data:", error);
+            return ({ Status: "err", Msg: "Something went wrong", error: error });
+        }
+    }
 
 
 
