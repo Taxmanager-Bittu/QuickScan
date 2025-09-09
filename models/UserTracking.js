@@ -1,6 +1,70 @@
 // Npm Packages
 const mongoose = require("mongoose");
 
+// Sub-schema for GPS-based location
+const GPSLocationSchema = new mongoose.Schema({
+    latitude: String,
+    longitude: String,
+    accuracy: String
+}, {
+    _id: false
+});
+
+// Sub-schema for IP-based location
+const IPLocationSchema = new mongoose.Schema({
+    range: [Number],
+    country: String,
+    region: String,
+    eu: String,
+    timezone: String,
+    city: String,
+    ll: [Number],
+    metro: Number,
+    area: Number
+}, {
+    _id: false
+});
+
+// Sub-schema for Current Location (IP + GPS)
+const CurrentLocationSchema = new mongoose.Schema({
+    ip: String,
+    ipBased: IPLocationSchema,
+    gpsBased: GPSLocationSchema
+}, {
+    _id: false
+});
+
+// Sub-schema for User Agent
+const UserAgentInfoSchema = new mongoose.Schema({
+    uaString: String,
+    browser: String,
+    version: String,
+    os: String,
+    osVersion: String,
+    device: String,
+    platform: String,
+    source: String,
+    isMobile: Boolean,
+    isTablet: Boolean,
+    isDesktop: Boolean,
+    isAndroid: Boolean,
+    isMac: Boolean
+}, {
+    _id: false
+});
+
+// Sub-schema for Client Info
+const ClientInfoSchema = new mongoose.Schema({
+    screen: {
+        width: Number,
+        height: Number
+    },
+    timezone: String,
+    language: String
+}, {
+    _id: false
+});
+
 // Sub-schema for individual visits
 const VisitSchema = new mongoose.Schema({
     sessionId: String,
@@ -8,6 +72,7 @@ const VisitSchema = new mongoose.Schema({
     referrer: String,
     entryUrl: String,
     currentUrl: String,
+
     entryTime: {
         type: Date,
         default: Date.now
@@ -18,36 +83,20 @@ const VisitSchema = new mongoose.Schema({
         default: 0
     },
 
-    geo: {
-        country: String,
-        region: String,
-        city: String,
-        ll: [Number]
-    },
+    // Location Info
+    geo: IPLocationSchema,
+    currentLocation: CurrentLocationSchema,
 
-    userAgent: {
-        uaString: String,
-        browser: String,
-        version: String,
-        os: String,
-        osVersion: String,
-        device: String,
-        isMobile: Boolean,
-        isTablet: Boolean,
-        isDesktop: Boolean
-    },
+    // User Agent Info
+    userAgent: UserAgentInfoSchema,
 
-    clientInfo: {
-        screen: {
-            width: Number,
-            height: Number
-        },
-        timezone: String,
-        language: String
-    },
+    // Client Info
+    clientInfo: ClientInfoSchema,
 
     cookies: Object,
     headers: Object,
+
+    // Flags
     isBot: Boolean,
     vpnSuspected: Boolean,
 
@@ -55,18 +104,22 @@ const VisitSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
+}, {
+    _id: false
 });
 
-// Main schema for visitor (grouped by IP)
+// Main schema for visitor (grouped by IP or machineId)
 const VisitorSchema = new mongoose.Schema({
     ip: {
         type: String,
         required: true
-    }, // unique visitor by IP
+    },
     visits: {
         type: [VisitSchema],
         default: []
-    } // multiple visits inside one IP
+    }
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model("Visitor", VisitorSchema);

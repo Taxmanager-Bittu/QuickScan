@@ -91,7 +91,6 @@ class Tracker {
 
             // save visitor data
             const trackinguser = await trackerCtrl.save(data);
-            console.log("🚀 ~ Tracker ~ analyzer ~ trackinguser:", trackinguser)
 
             // on response finish -> exit time save
             res.on("finish", async() => {

@@ -15,1369 +15,1389 @@
                                 <li><span>3. </span>Customize Design Your QR</li>
                             </ul>
                         </div>
-                        <!-- 1. Select QR Code Type -->
-                        <div class="selqrcotyp bordelinside">
-                            <h4>Select QR Code Type</h4>
-                            <form action="/save-qr-type" method="post">
-                                <input type="hidden" name="qr_type" id="selectedQrType">
-                                <input type="hidden" name="route_name" id="selectedRouteName">
-                                <ul id="qrTypeList">
-                                    <li data-type="URL / Link" data-route="url">
-                                        <span><i class="fa-solid fa-link"></i></span>
-                                        <b>URL / Link</b>
-                                    </li>
-                                    <li data-type="Play Market / App Store" data-route="playstore">
-                                        <span><i class="fa-brands fa-google-play"></i></span>
-                                        <b>Play Market / App
+                        <% if (!qrTypeData) { %>
+
+                            <!-- 1. Select QR Code Type -->
+                            <div class="selqrcotyp bordelinside">
+                                <h4>Select QR Code Type</h4>
+                                <form action="/save-qr-type" method="post">
+                                    <input type="hidden" name="qr_type" id="selectedQrType">
+                                    <input type="hidden" name="route_name" id="selectedRouteName">
+                                    <ul id="qrTypeList">
+                                        <li data-type="URL / Link" data-route="url">
+                                            <span><i class="fa-solid fa-link"></i></span>
+                                            <b>URL / Link</b>
+                                        </li>
+                                        <li data-type="Play Market / App Store" data-route="playstore">
+                                            <span><i class="fa-brands fa-google-play"></i></span>
+                                            <b>Play Market / App
                                         Store</b>
-                                    </li>
-                                    <li data-type="Text" data-route="text">
-                                        <span><i class="fa-solid fa-font"></i></span>
-                                        <b>Text</b>
-                                    </li>
-                                    <li data-type="Map" data-route="map">
-                                        <span><i class="fa-solid fa-map-location-dot"></i></span>
-                                        <b>Map</b>
-                                    </li>
-                                    <li data-type="Wi-Fi" data-route="wifi">
-                                        <span><i class="fa-solid fa-wifi"></i></span>
-                                        <b>Wi-Fi</b>
-                                    </li>
-                                    <li data-type="Audio" data-route="audio">
-                                        <span><i class="fa-solid fa-headphones"></i></span>
-                                        <b>Audio</b>
-                                    </li>
-                                    <li data-type="PDF" data-route="pdf">
-                                        <span><i class="fa-solid fa-file-pdf"></i></span>
-                                        <b>PDF</b>
-                                    </li>
-                                    <li data-type="WhatsApp" data-route="whatsapp">
-                                        <span><i class="fa-brands fa-whatsapp"></i></span>
-                                        <b>WhatsApp</b>
-                                    </li>
-                                    <li data-type="YouTube" data-route="youtube">
-                                        <span><i class="fa-brands fa-youtube"></i></span>
-                                        <b>YouTube</b>
-                                    </li>
-                                    <li data-type="Facebook" data-route="facebook">
-                                        <span><i class="fa-brands fa-facebook"></i></span>
-                                        <b>Facebook</b>
-                                    </li>
-                                    <li data-type="Image" data-route="image">
-                                        <span><i class="fa-solid fa-image"></i></span>
-                                        <b>Image</b>
-                                    </li>
-                                    <li data-type="Instagram" data-route="instagram">
-                                        <span><i class="fa-brands fa-instagram"></i></span>
-                                        <b>Instagram</b>
-                                    </li>
-                                    <li data-type="vCard" data-route="vcard">
-                                        <span><i class="fa-solid fa-id-card"></i></span>
-                                        <b>vCard</b>
-                                    </li>
-                                    <li data-type="Telegram" data-route="telegram">
-                                        <span><i class="fa-brands fa-telegram"></i></span>
-                                        <b>Telegram</b>
-                                    </li>
-                                    <li data-type="E-mail" data-route="email">
-                                        <span><i class="fa-solid fa-envelope"></i></span>
-                                        <b>E-mail</b>
-                                    </li>
-                                    <li data-type="Booking" data-route="booking">
-                                        <span><i class="fa-solid fa-calendar-check"></i></span>
-                                        <b>Booking</b>
-                                    </li>
-                                    <li data-type="Phone Call" data-route="phonecall">
-                                        <span><i class="fa-solid fa-phone"></i></span>
-                                        <b>Phone Call</b>
-                                    </li>
-                                    <li data-type="PPTX" data-route="pptx">
-                                        <span><i class="fa-solid fa-file-powerpoint"></i></span>
-                                        <b>PPTX</b>
-                                    </li>
-                                    <li data-type="Custom URL" data-route="customurl">
-                                        <span><i class="fa-solid fa-earth-americas"></i></span>
-                                        <b>Custom URL</b>
-                                    </li>
-                                    <li data-type="List of Links" data-route="listlinks">
-                                        <span><i class="fa-solid fa-list"></i></span>
-                                        <b>List of Links</b>
-                                    </li>
-                                    <li data-type="TikTok" data-route="tiktok">
-                                        <span><i class="fa-brands fa-tiktok"></i></span>
-                                        <b>TikTok</b>
-                                    </li>
-                                    <li data-type="Video" data-route="video">
-                                        <span><i class="fa-solid fa-video"></i></span>
-                                        <b>Video</b>
-                                    </li>
-                                    <li data-type="Google Forms" data-route="googleforms">
-                                        <span><i class="fa-solid fa-file-lines"></i></span>
-                                        <b>Google Forms</b>
-                                    </li>
-                                    <li data-type="PCR" data-route="pcr">
-                                        <span><i class="fa-solid fa-vial"></i></span>
-                                        <b>PCR</b>
-                                    </li>
-                                    <li data-type="X (Twitter)" data-route="twitter">
-                                        <span><i class="fa-brands fa-x-twitter"></i></span>
-                                        <b>X (Twitter)</b>
-                                    </li>
-                                    <li data-type="Snapchat" data-route="snapchat">
-                                        <span><i class="fa-brands fa-snapchat"></i></span>
-                                        <b>Snapchat</b>
-                                    </li>
-                                    <li data-type="Spotify" data-route="spotify">
-                                        <span><i class="fa-brands fa-spotify"></i></span>
-                                        <b>Spotify</b>
-                                    </li>
-                                    <li data-type="Google Doc" data-route="googledoc">
-                                        <span><i class="fa-brands fa-google-drive"></i></span>
-                                        <b>Google Doc</b>
-                                    </li>
-                                    <li data-type="Google Review" data-route="googlereview">
-                                        <span><i class="fa-solid fa-star"></i></span>
-                                        <b>Google Review</b>
-                                    </li>
-                                    <li data-type="Google Sheets" data-route="googlesheets">
-                                        <span><i class="fa-solid fa-table"></i></span>
-                                        <b>Google Sheets</b>
-                                    </li>
-                                    <li data-type="Payment" data-route="payment">
-                                        <span><i class="fa-solid fa-credit-card"></i></span>
-                                        <b>Payment</b>
-                                    </li>
-                                    <li data-type="SMS" data-route="sms">
-                                        <span><i class="fa-solid fa-comment-sms"></i></span>
-                                        <b>SMS</b>
-                                    </li>
-                                    <li data-type="Logo" data-route="logo">
-                                        <span><i class="fa-solid fa-copyright"></i></span>
-                                        <b>Logo</b>
-                                    </li>
-                                    <li data-type="Office 365" data-route="office365">
-                                        <span><i class="fa-brands fa-microsoft"></i></span>
-                                        <b>Office 365</b>
-                                    </li>
-                                    <li data-type="Shaped" data-route="shaped">
-                                        <span><i class="fa-solid fa-shapes"></i></span>
-                                        <b>Shaped</b>
-                                    </li>
-                                    <li data-type="Paypal" data-route="paypal">
-                                        <span><i class="fa-brands fa-paypal"></i></span>
-                                        <b>Paypal</b>
-                                    </li>
-                                    <li data-type="Etsy" data-route="etsy">
-                                        <span><i class="fa-brands fa-etsy"></i></span>
-                                        <b>Etsy</b>
-                                    </li>
-                                    <li data-type="PNG" data-route="png">
-                                        <span><i class="fa-solid fa-file-image"></i></span>
-                                        <b>PNG</b>
-                                    </li>
-                                    <li data-type="LinkedIn" data-route="linkedin">
-                                        <span><i class="fa-brands fa-linkedin"></i></span>
-                                        <b>LinkedIn</b>
-                                    </li>
-                                    <li data-type="Crypto Payment" data-route="cryptopayment">
-                                        <span><i class="fa-brands fa-bitcoin"></i></span>
-                                        <b>Crypto Payment</b>
-                                    </li>
-                                    <li data-type="Calendar" data-route="calendar">
-                                        <span><i class="fa-solid fa-calendar-days"></i></span>
-                                        <b>Calendar</b>
-                                    </li>
-                                    <li data-type="Social Media" data-route="socialmedia">
-                                        <span><i class="fa-solid fa-share-nodes"></i></span>
-                                        <b>Social Media</b>
-                                    </li>
-                                    <li data-type="Ticket" data-route="ticket">
-                                        <span><i class="fa-solid fa-ticket"></i></span>
-                                        <b>Ticket</b>
-                                    </li>
-                                    <li data-type="Reddit" data-route="reddit">
-                                        <span><i class="fa-brands fa-reddit"></i></span>
-                                        <b>Reddit</b>
-                                    </li>
-                                    <li data-type="File" data-route="file">
-                                        <span><i class="fa-solid fa-file"></i></span>
-                                        <b>File</b>
-                                    </li>
-                                    <li data-type="Excel" data-route="excel">
-                                        <span><i class="fa-solid fa-file-excel"></i></span>
-                                        <b>Excel</b>
-                                    </li>
-                                    <li data-type="Venmo" data-route="venmo">
-                                        <span><i class="fa-brands fa-vimeo"></i></span>
-                                        <b>Venmo</b>
-                                    </li>
-                                    <li data-type="Amazon" data-route="amazon">
-                                        <span><i class="fa-brands fa-amazon"></i></span>
-                                        <b>Amazon</b>
-                                    </li>
-                                    <li data-type="2D-Barcode" data-route="2dbarcode">
-                                        <span><i class="fa-solid fa-qrcode"></i></span>
-                                        <b>2D-Barcode</b>
-                                    </li>
-                                    <li data-type="UPI" data-route="upi">
-                                        <span><i class="fa-solid fa-indian-rupee-sign"></i></span>
-                                        <b>UPI</b>
-                                    </li>
-                                    <li data-type="Online Booking" data-route="onlinebooking">
-                                        <span><i class="fa-solid fa-calendar-check"></i></span>
-                                        <b>Online Booking</b>
-                                    </li>
-                                </ul>
-                                <div class="buttonsecare">
-                                    <button class="next butnsectonexpre" type="submit" id="nextBtn" disabled>Next</button>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- 2. Complete Content -->
-                        <div class="complitcontsec bordelinside" style="display: block;">
-                            <h4>Complete Content</h4>
-                            <form action="">
-
-                                <!--Calendar Event-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Calendar Event</h5>
-                                        <div class="form-group">
-                                            <label>Event Title</label>
-                                            <input type="text" class="form-control" placeholder="Meeting Title">
-                                        </div>
-
-                                        <div class="formdivider">
-
-                                            <div class="form-group">
-                                                <label>Start Date & Time</label>
-                                                <input type="datetime-local" class="form-control">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>End Date & Time</label>
-                                                <input type="datetime-local" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Location (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Conference Room A">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Event Description..."></textarea>
-                                        </div>
+                                        </li>
+                                        <li data-type="Text" data-route="text">
+                                            <span><i class="fa-solid fa-font"></i></span>
+                                            <b>Text</b>
+                                        </li>
+                                        <li data-type="Map" data-route="map">
+                                            <span><i class="fa-solid fa-map-location-dot"></i></span>
+                                            <b>Map</b>
+                                        </li>
+                                        <li data-type="Wi-Fi" data-route="wifi">
+                                            <span><i class="fa-solid fa-wifi"></i></span>
+                                            <b>Wi-Fi</b>
+                                        </li>
+                                        <li data-type="Audio" data-route="audio">
+                                            <span><i class="fa-solid fa-headphones"></i></span>
+                                            <b>Audio</b>
+                                        </li>
+                                        <li data-type="PDF" data-route="pdf">
+                                            <span><i class="fa-solid fa-file-pdf"></i></span>
+                                            <b>PDF</b>
+                                        </li>
+                                        <li data-type="WhatsApp" data-route="whatsapp">
+                                            <span><i class="fa-brands fa-whatsapp"></i></span>
+                                            <b>WhatsApp</b>
+                                        </li>
+                                        <li data-type="YouTube" data-route="youtube">
+                                            <span><i class="fa-brands fa-youtube"></i></span>
+                                            <b>YouTube</b>
+                                        </li>
+                                        <li data-type="Facebook" data-route="facebook">
+                                            <span><i class="fa-brands fa-facebook"></i></span>
+                                            <b>Facebook</b>
+                                        </li>
+                                        <li data-type="Image" data-route="image">
+                                            <span><i class="fa-solid fa-image"></i></span>
+                                            <b>Image</b>
+                                        </li>
+                                        <li data-type="Instagram" data-route="instagram">
+                                            <span><i class="fa-brands fa-instagram"></i></span>
+                                            <b>Instagram</b>
+                                        </li>
+                                        <li data-type="vCard" data-route="vcard">
+                                            <span><i class="fa-solid fa-id-card"></i></span>
+                                            <b>vCard</b>
+                                        </li>
+                                        <li data-type="Telegram" data-route="telegram">
+                                            <span><i class="fa-brands fa-telegram"></i></span>
+                                            <b>Telegram</b>
+                                        </li>
+                                        <li data-type="E-mail" data-route="email">
+                                            <span><i class="fa-solid fa-envelope"></i></span>
+                                            <b>E-mail</b>
+                                        </li>
+                                        <li data-type="Booking" data-route="booking">
+                                            <span><i class="fa-solid fa-calendar-check"></i></span>
+                                            <b>Booking</b>
+                                        </li>
+                                        <li data-type="Phone Call" data-route="phonecall">
+                                            <span><i class="fa-solid fa-phone"></i></span>
+                                            <b>Phone Call</b>
+                                        </li>
+                                        <li data-type="PPTX" data-route="pptx">
+                                            <span><i class="fa-solid fa-file-powerpoint"></i></span>
+                                            <b>PPTX</b>
+                                        </li>
+                                        <li data-type="Custom URL" data-route="customurl">
+                                            <span><i class="fa-solid fa-earth-americas"></i></span>
+                                            <b>Custom URL</b>
+                                        </li>
+                                        <li data-type="List of Links" data-route="listlinks">
+                                            <span><i class="fa-solid fa-list"></i></span>
+                                            <b>List of Links</b>
+                                        </li>
+                                        <li data-type="TikTok" data-route="tiktok">
+                                            <span><i class="fa-brands fa-tiktok"></i></span>
+                                            <b>TikTok</b>
+                                        </li>
+                                        <li data-type="Video" data-route="video">
+                                            <span><i class="fa-solid fa-video"></i></span>
+                                            <b>Video</b>
+                                        </li>
+                                        <li data-type="Google Forms" data-route="googleforms">
+                                            <span><i class="fa-solid fa-file-lines"></i></span>
+                                            <b>Google Forms</b>
+                                        </li>
+                                        <li data-type="PCR" data-route="pcr">
+                                            <span><i class="fa-solid fa-vial"></i></span>
+                                            <b>PCR</b>
+                                        </li>
+                                        <li data-type="X (Twitter)" data-route="twitter">
+                                            <span><i class="fa-brands fa-x-twitter"></i></span>
+                                            <b>X (Twitter)</b>
+                                        </li>
+                                        <li data-type="Snapchat" data-route="snapchat">
+                                            <span><i class="fa-brands fa-snapchat"></i></span>
+                                            <b>Snapchat</b>
+                                        </li>
+                                        <li data-type="Spotify" data-route="spotify">
+                                            <span><i class="fa-brands fa-spotify"></i></span>
+                                            <b>Spotify</b>
+                                        </li>
+                                        <li data-type="Google Doc" data-route="googledoc">
+                                            <span><i class="fa-brands fa-google-drive"></i></span>
+                                            <b>Google Doc</b>
+                                        </li>
+                                        <li data-type="Google Review" data-route="googlereview">
+                                            <span><i class="fa-solid fa-star"></i></span>
+                                            <b>Google Review</b>
+                                        </li>
+                                        <li data-type="Google Sheets" data-route="googlesheets">
+                                            <span><i class="fa-solid fa-table"></i></span>
+                                            <b>Google Sheets</b>
+                                        </li>
+                                        <li data-type="Payment" data-route="payment">
+                                            <span><i class="fa-solid fa-credit-card"></i></span>
+                                            <b>Payment</b>
+                                        </li>
+                                        <li data-type="SMS" data-route="sms">
+                                            <span><i class="fa-solid fa-comment-sms"></i></span>
+                                            <b>SMS</b>
+                                        </li>
+                                        <li data-type="Logo" data-route="logo">
+                                            <span><i class="fa-solid fa-copyright"></i></span>
+                                            <b>Logo</b>
+                                        </li>
+                                        <li data-type="Office 365" data-route="office365">
+                                            <span><i class="fa-brands fa-microsoft"></i></span>
+                                            <b>Office 365</b>
+                                        </li>
+                                        <li data-type="Shaped" data-route="shaped">
+                                            <span><i class="fa-solid fa-shapes"></i></span>
+                                            <b>Shaped</b>
+                                        </li>
+                                        <li data-type="Paypal" data-route="paypal">
+                                            <span><i class="fa-brands fa-paypal"></i></span>
+                                            <b>Paypal</b>
+                                        </li>
+                                        <li data-type="Etsy" data-route="etsy">
+                                            <span><i class="fa-brands fa-etsy"></i></span>
+                                            <b>Etsy</b>
+                                        </li>
+                                        <li data-type="PNG" data-route="png">
+                                            <span><i class="fa-solid fa-file-image"></i></span>
+                                            <b>PNG</b>
+                                        </li>
+                                        <li data-type="LinkedIn" data-route="linkedin">
+                                            <span><i class="fa-brands fa-linkedin"></i></span>
+                                            <b>LinkedIn</b>
+                                        </li>
+                                        <li data-type="Crypto Payment" data-route="cryptopayment">
+                                            <span><i class="fa-brands fa-bitcoin"></i></span>
+                                            <b>Crypto Payment</b>
+                                        </li>
+                                        <li data-type="Calendar" data-route="calendar">
+                                            <span><i class="fa-solid fa-calendar-days"></i></span>
+                                            <b>Calendar</b>
+                                        </li>
+                                        <li data-type="Social Media" data-route="socialmedia">
+                                            <span><i class="fa-solid fa-share-nodes"></i></span>
+                                            <b>Social Media</b>
+                                        </li>
+                                        <li data-type="Ticket" data-route="ticket">
+                                            <span><i class="fa-solid fa-ticket"></i></span>
+                                            <b>Ticket</b>
+                                        </li>
+                                        <li data-type="Reddit" data-route="reddit">
+                                            <span><i class="fa-brands fa-reddit"></i></span>
+                                            <b>Reddit</b>
+                                        </li>
+                                        <li data-type="File" data-route="file">
+                                            <span><i class="fa-solid fa-file"></i></span>
+                                            <b>File</b>
+                                        </li>
+                                        <li data-type="Excel" data-route="excel">
+                                            <span><i class="fa-solid fa-file-excel"></i></span>
+                                            <b>Excel</b>
+                                        </li>
+                                        <li data-type="Venmo" data-route="venmo">
+                                            <span><i class="fa-brands fa-vimeo"></i></span>
+                                            <b>Venmo</b>
+                                        </li>
+                                        <li data-type="Amazon" data-route="amazon">
+                                            <span><i class="fa-brands fa-amazon"></i></span>
+                                            <b>Amazon</b>
+                                        </li>
+                                        <li data-type="2D-Barcode" data-route="2dbarcode">
+                                            <span><i class="fa-solid fa-qrcode"></i></span>
+                                            <b>2D-Barcode</b>
+                                        </li>
+                                        <li data-type="UPI" data-route="upi">
+                                            <span><i class="fa-solid fa-indian-rupee-sign"></i></span>
+                                            <b>UPI</b>
+                                        </li>
+                                        <li data-type="Online Booking" data-route="onlinebooking">
+                                            <span><i class="fa-solid fa-calendar-check"></i></span>
+                                            <b>Online Booking</b>
+                                        </li>
+                                    </ul>
+                                    <div class="buttonsecare">
+                                        <button class="next butnsectonexpre" type="submit" id="nextBtn" disabled>Next</button>
                                     </div>
-                                </div>
-
-                                <!--App Store Information-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>App Store Information</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Text Content-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Text Content</h5>
-                                        <div class="form-group">
-                                            <label>Text Content</label>
-                                            <textarea class="form-control" rows="3" placeholder="Enter your text here..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Location Details-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Location Details</h5>
-
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <input type="text" class="form-control" placeholder="123 Main St, City, Country">
-                                        </div>
-
-                                        <div class="formdivider">
-
-                                            <div class="form-group">
-                                                <label>Latitude (Optional)</label>
-                                                <input type="number" class="form-control" placeholder="e.g., 37.7749">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>Longitude (Optional)</label>
-                                                <input type="number" class="form-control" placeholder="e.g., -122.4194">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Wi-Fi Network Details-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Wi-Fi Network Details</h5>
-
-                                        <div class="form-group">
-                                            <label>Network Name (SSID)</label>
-                                            <input type="text" class="form-control" placeholder="WiFi Network Name">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" class="form-control" placeholder="WiFi Password">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Security Type</label>
-                                            <input type="text" class="form-control" placeholder="WPA/WPA2">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Audio File-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Audio File</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--PDF Document-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>PDF Document</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--WhatsApp Details-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>WhatsApp Details</h5>
-
-                                        <div class="form-group">
-                                            <label>WhatsApp Number</label>
-                                            <input type="number" class="form-control" placeholder="+1234567890">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Pre-Filled Message (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Hello..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--YouTube Video-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>YouTube Video</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Facebook Profile/Page-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Facebook Profile/Page</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Image File-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Image File</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Instagram Profile-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Instagram Profile</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Contact Information-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Contact Information</h5>
-
-                                        <div class="formdivider">
-
-                                            <div class="form-group">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control" placeholder="First Name">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Last Name">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Organization</label>
-                                            <input type="text" class="form-control" placeholder="Company Name">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" class="form-control" placeholder="Email">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Phone</label>
-                                            <input type="number" class="form-control" placeholder="Phone Number">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Telegram Details-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Telegram Details</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Email Information-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Email Information</h5>
-
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" class="form-control" placeholder="Email">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Subject</label>
-                                            <input type="text" class="form-control" placeholder="Email Subject">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Message</label>
-                                            <textarea class="form-control" rows="3" placeholder="Email Message..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Booking Details-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Booking Details</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Phone Number-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Phone Number</h5>
-
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="number" class="form-control" placeholder="+1234567890">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--PowerPoint Presentation-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>PowerPoint Presentation</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Custom URL-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Custom URL</h5>
-
-                                        <div class="form-group">
-                                            <label>Website URL</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--List of Links-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>List of Links</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--TikTok Profile-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>TikTok Profile</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Video File-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Video File</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Google Form-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Google Form</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--PCR Test Details-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>PCR Test Details</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--X (Twitter) Profile-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>X (Twitter) Profile</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Snapchat Profile-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Snapchat Profile</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Spotify Content-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Spotify Content</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Google Document-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Google Document</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Google Review-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Google Review</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Google Sheets-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Google Sheets</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Payment Details-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Payment Details</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--SMS Message-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>SMS Message</h5>
-
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="number" class="form-control" placeholder="+1234567890">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Message</label>
-                                            <textarea class="form-control" rows="3" placeholder="SMS Message..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Logo Image-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Logo Image</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Office 365-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Office 365</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Shaped Content-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Shaped Content</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--PayPal Payment-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>PayPal Payment</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Etsy Store/Product-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Etsy Store/Product</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--PNG Image-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>PNG Image</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--LinkedIn Profile-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>LinkedIn Profile</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Cryptocurrency Payment-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Cryptocurrency Payment</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Calendar Event-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Calendar Event</h5>
-
-                                        <div class="form-group">
-                                            <label>Event Title</label>
-                                            <input type="text" class="form-control" placeholder="Meeting Title">
-                                        </div>
-
-                                        <div class="formdivider">
-
-                                            <div class="form-group">
-                                                <label>Start Date & Time</label>
-                                                <input type="datetime-local" class="form-control">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>End Date & Time</label>
-                                                <input type="datetime-local" class="form-control">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Location (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Conference Room A">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Event Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Social Media Links-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Social Media Links</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Event Ticket-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Event Ticket</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Reddit Profile-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Reddit Profile</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--File Download-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5></h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Excel Spreadsheet-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Excel Spreadsheet</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Venmo Payment-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Venmo Payment</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Amazon Product-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Amazon Product</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--2D Barcode Data-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>2D Barcode Data</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--UPI Payment-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>UPI Payment</h5>
-
-                                        <div class="form-group">
-                                            <label>UPI ID</label>
-                                            <input type="text" class="form-control" placeholder="example@upi">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Amount (Optional)</label>
-                                            <input type="number" class="form-control" placeholder="100.00">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Transaction Note (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Payment for...">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--Online Booking-->
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Online Booking</h5>
-
-                                        <div class="form-group">
-                                            <label>URL/Link</label>
-                                            <input type="url" class="form-control" placeholder="https://example.com">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Title (Optional)</label>
-                                            <input type="text" class="form-control" placeholder="Content Title">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Description (Optional)</label>
-                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </form>
-                            <div class="buttonsecare">
-                                <span class="Previous butnsectonexpre">Previous</span>
-                                <button class="next butnsectonexpre" type="submit">Next</button>
+                                </form>
                             </div>
-                        </div>
-                        <!-- 3. Design Your QR Code -->
-                        <div class="complitcontsec bordelinside">
-                            <h4>Design Your QR Code</h4>
-                            <p>Customize the appearance of your QR code with various patterns and styles</p>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h5>Body Patterns</h5>
+                            <% } else { %>
+                                <!-- 2. Complete Content -->
+                                <div class="complitcontsec bordelinside">
+                                    <h4>Complete Content</h4>
+                                    <form action="">
 
+                                        <% if (qrTypeData.route_name === 'url') { %>
+                                            <!--Custom URL-->
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h5>Custom URL</h5>
+
+                                                    <div class="form-group">
+                                                        <label>Website URL</label>
+                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } else if (qrTypeData.route_name === 'playstore') { %>
+
+                                                <!--App Store Information-->
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <h5>App Store Information</h5>
+
+                                                        <div class="form-group">
+                                                            <label>URL/Link</label>
+                                                            <input type="url" class="form-control" placeholder="https://example.com">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Title (Optional)</label>
+                                                            <input type="text" class="form-control" placeholder="Content Title">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Description (Optional)</label>
+                                                            <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <% } else if (qrTypeData.route_name === 'text') { %>
+                                                    <!--Text Content-->
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h5>Text Content</h5>
+                                                            <div class="form-group">
+                                                                <label>Text Content</label>
+                                                                <textarea class="form-control" rows="3" placeholder="Enter your text here..."></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <% } else if (qrTypeData.route_name === 'map') { %>
+
+
+
+
+
+                                                        <% } %>
+
+
+                                                            <!--Calendar Event-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Calendar Event</h5>
+                                                                    <div class="form-group">
+                                                                        <label>Event Title</label>
+                                                                        <input type="text" class="form-control" placeholder="Meeting Title">
+                                                                    </div>
+
+                                                                    <div class="formdivider">
+
+                                                                        <div class="form-group">
+                                                                            <label>Start Date & Time</label>
+                                                                            <input type="datetime-local" class="form-control">
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label>End Date & Time</label>
+                                                                            <input type="datetime-local" class="form-control">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Location (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Conference Room A">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Event Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                            <!--Location Details-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Location Details</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>Address</label>
+                                                                        <input type="text" class="form-control" placeholder="123 Main St, City, Country">
+                                                                    </div>
+
+                                                                    <div class="formdivider">
+
+                                                                        <div class="form-group">
+                                                                            <label>Latitude (Optional)</label>
+                                                                            <input type="number" class="form-control" placeholder="e.g., 37.7749">
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label>Longitude (Optional)</label>
+                                                                            <input type="number" class="form-control" placeholder="e.g., -122.4194">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Wi-Fi Network Details-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Wi-Fi Network Details</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>Network Name (SSID)</label>
+                                                                        <input type="text" class="form-control" placeholder="WiFi Network Name">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Password</label>
+                                                                        <input type="password" class="form-control" placeholder="WiFi Password">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Security Type</label>
+                                                                        <input type="text" class="form-control" placeholder="WPA/WPA2">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Audio File-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Audio File</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--PDF Document-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>PDF Document</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--WhatsApp Details-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>WhatsApp Details</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>WhatsApp Number</label>
+                                                                        <input type="number" class="form-control" placeholder="+1234567890">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Pre-Filled Message (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Hello..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--YouTube Video-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>YouTube Video</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Facebook Profile/Page-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Facebook Profile/Page</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Image File-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Image File</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Instagram Profile-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Instagram Profile</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Contact Information-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Contact Information</h5>
+
+                                                                    <div class="formdivider">
+
+                                                                        <div class="form-group">
+                                                                            <label>First Name</label>
+                                                                            <input type="text" class="form-control" placeholder="First Name">
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label>Last Name</label>
+                                                                            <input type="text" class="form-control" placeholder="Last Name">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Organization</label>
+                                                                        <input type="text" class="form-control" placeholder="Company Name">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Email</label>
+                                                                        <input type="email" class="form-control" placeholder="Email">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Phone</label>
+                                                                        <input type="number" class="form-control" placeholder="Phone Number">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Telegram Details-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Telegram Details</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Email Information-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Email Information</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>Email</label>
+                                                                        <input type="email" class="form-control" placeholder="Email">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Subject</label>
+                                                                        <input type="text" class="form-control" placeholder="Email Subject">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Message</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Email Message..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Booking Details-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Booking Details</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Phone Number-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Phone Number</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>Phone Number</label>
+                                                                        <input type="number" class="form-control" placeholder="+1234567890">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--PowerPoint Presentation-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>PowerPoint Presentation</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--List of Links-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>List of Links</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--TikTok Profile-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>TikTok Profile</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Video File-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Video File</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Google Form-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Google Form</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--PCR Test Details-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>PCR Test Details</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--X (Twitter) Profile-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>X (Twitter) Profile</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Snapchat Profile-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Snapchat Profile</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Spotify Content-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Spotify Content</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Google Document-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Google Document</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Google Review-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Google Review</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Google Sheets-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Google Sheets</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Payment Details-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Payment Details</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--SMS Message-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>SMS Message</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>Phone Number</label>
+                                                                        <input type="number" class="form-control" placeholder="+1234567890">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Message</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="SMS Message..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Logo Image-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Logo Image</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Office 365-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Office 365</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Shaped Content-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Shaped Content</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--PayPal Payment-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>PayPal Payment</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Etsy Store/Product-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Etsy Store/Product</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--PNG Image-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>PNG Image</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--LinkedIn Profile-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>LinkedIn Profile</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Cryptocurrency Payment-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Cryptocurrency Payment</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Calendar Event-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Calendar Event</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>Event Title</label>
+                                                                        <input type="text" class="form-control" placeholder="Meeting Title">
+                                                                    </div>
+
+                                                                    <div class="formdivider">
+
+                                                                        <div class="form-group">
+                                                                            <label>Start Date & Time</label>
+                                                                            <input type="datetime-local" class="form-control">
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label>End Date & Time</label>
+                                                                            <input type="datetime-local" class="form-control">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Location (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Conference Room A">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Event Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Social Media Links-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Social Media Links</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Event Ticket-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Event Ticket</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Reddit Profile-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Reddit Profile</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--File Download-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5></h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Excel Spreadsheet-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Excel Spreadsheet</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Venmo Payment-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Venmo Payment</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Amazon Product-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Amazon Product</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--2D Barcode Data-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>2D Barcode Data</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--UPI Payment-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>UPI Payment</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>UPI ID</label>
+                                                                        <input type="text" class="form-control" placeholder="example@upi">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Amount (Optional)</label>
+                                                                        <input type="number" class="form-control" placeholder="100.00">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Transaction Note (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Payment for...">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!--Online Booking-->
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <h5>Online Booking</h5>
+
+                                                                    <div class="form-group">
+                                                                        <label>URL/Link</label>
+                                                                        <input type="url" class="form-control" placeholder="https://example.com">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Title (Optional)</label>
+                                                                        <input type="text" class="form-control" placeholder="Content Title">
+                                                                    </div>
+
+                                                                    <div class="form-group">
+                                                                        <label>Description (Optional)</label>
+                                                                        <textarea class="form-control" rows="3" placeholder="Content Description..."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                    </form>
+                                    <div class="buttonsecare">
+                                        <span class="Previous butnsectonexpre">Previous</span>
+                                        <button class="next butnsectonexpre" type="submit">Next</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+
+                                <% } %>
+                                    <!-- 3. Design Your QR Code -->
+                                    <div class="complitcontsec bordelinside" style="display: none;">
+                                        <h4>Design Your QR Code</h4>
+                                        <p>Customize the appearance of your QR code with various patterns and styles</p>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h5>Body Patterns</h5>
+
+                                            </div>
+                                        </div>
+                                    </div>
 
 
                     </div>
