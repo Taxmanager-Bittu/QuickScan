@@ -293,3 +293,71 @@ label {
     font-size: 13px;
     letter-spacing: 0.3px;
 }
+
+/*---Qr Frame List Css---*/
+.bordelinside p {
+    font-size: 14px;
+    margin: 0px 0px 20px;
+}
+
+.qrframelist {
+    margin: 0px auto 30px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+}
+
+.qrframelist h5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 0px 20px;
+}
+
+.qrframelist h5 a {
+    background: #0024ad;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0px;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+.qrframelist ul {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: 100%;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.qrframelist ul li {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.qrframelist ul li span {
+    margin: 0px auto;
+    padding: 0px;
+    display: inline-block;
+}
+
+.qrframelist ul li span img {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.qrframelist h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 0px 20px;
+}
