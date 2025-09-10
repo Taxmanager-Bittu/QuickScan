@@ -59,6 +59,8 @@ app.use('/css', express.static(__dirname + '/public/css'));
 app.use('/images', express.static(__dirname + '/public/images'));
 app.use('/font', express.static(__dirname + '/public/font'));
 app.use('/js', express.static(__dirname + '/public/js'));
+app.use('/qr-icon', express.static(__dirname + '/public/qr-icon'));
+
 
 
 
