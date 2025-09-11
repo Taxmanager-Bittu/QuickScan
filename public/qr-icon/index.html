@@ -1,61 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SVG Index</title>
-        <style>
-    ul#svgList {
-      margin: 0;
-      padding: 0;
-      display: grid;
-      width: 100%;
-      list-style: none;
-      grid-template-columns: repeat(10, minmax(0, 1fr));
-      gap: 10px;
-    }
+<!--Frames-->
+<div class="row">
+  <div class="col-md-12 p-0" id="framesContainer">
+    <!-- JS से dynamic content आएगा -->
+  </div>
+</div>
 
-    ul#svgList li {
-      margin: 0;
-      padding: 0;
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      border: 1px solid #000;
-      border-radius: 6px;
-      overflow: hidden;
-    }
+<style>
+  .qrframelist {
+    margin-bottom: 30px;
+  }
 
-    ul#svgList li img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      text-align: center;
-      margin: 0 auto;
-    }
-  </style>
-    </head>
-    <body>
-        <ul id="svgList"></ul>
+  .qrframelist h4 {
+    margin: 20px 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
 
-        <script>
-    fetch("/svgs.json")
-      .then(res => res.json())
-      .then(svgFiles => {
-        const list = document.getElementById("svgList");
-        svgFiles.forEach(file => {
+  .qrframelist ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 10px;
+    list-style: none;
+  }
+
+  .qrframelist ul li {
+    border: 1px solid #000;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .qrframelist ul li span {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .qrframelist ul li span img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+</style>
+
+<script>
+  fetch("./svgs.json")
+    .then(res => res.json())
+    .then(files => {
+      const container = document.getElementById("framesContainer");
+
+      // Group by folder
+      const grouped = {};
+      files.forEach(path => {
+        const [folder, filename] = path.split("/");
+        if (!grouped[folder]) grouped[folder] = [];
+        grouped[folder].push(filename);
+      });
+
+      // Render each folder
+      Object.keys(grouped).forEach(folder => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "qrframelist";
+
+        const h4 = document.createElement("h4");
+        h4.textContent = folder;
+        wrapper.appendChild(h4);
+
+        const ul = document.createElement("ul");
+
+        grouped[folder].forEach(file => {
           const li = document.createElement("li");
+          const span = document.createElement("span");
           const img = document.createElement("img");
 
-          // ✅ Encode path to handle &, ', spaces, etc.
-          img.src = "/" + encodeURI(file);
+          img.src = `./${folder}/${encodeURI(file)}`;
           img.alt = file;
 
-          li.appendChild(img);
-          list.appendChild(li);
+          span.appendChild(img);
+          li.appendChild(span);
+          ul.appendChild(li);
         });
-      })
-      .catch(err => console.error("Error loading svgs.json:", err));
-  </script>
-    </body>
-</html>
+
+        wrapper.appendChild(ul);
+        container.appendChild(wrapper);
+      });
+    })
+    .catch(err => console.error("Error loading svgs.json:", err));
+</script>
